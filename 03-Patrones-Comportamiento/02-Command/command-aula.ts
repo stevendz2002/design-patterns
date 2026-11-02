@@ -49,7 +49,7 @@ class LucesAula {
 // Dispositivo: Proyector Inteligente
 class ProyectorInteligente {
   desplegar(): void {
-    console.log('%cProyector: Telón desplegado y proyector ENCENDIDO.', COLORS.blue);
+    console.log('%cProyector: Telón desplegado y proyector ENCENDIDO.', COLORS.white);
   }
 
   ocultar(): void {
@@ -196,11 +196,12 @@ function main(): void {
   panel.ejecutarComando(new ComandoDesplegarProyector(proyector));
   panel.ejecutarComando(new ComandoEncenderAire(aire, 20));
 
-  console.log('%c\n2. Se cometió un error con el aire acondicionado (Deshacer):', COLORS.yellow);
+  console.log('%c\n2. Se cometió un error con el aire acondicionado (Deshacer):', COLORS.green);
   panel.deshacer();
 
-  console.log('%c\n3. Fin de la jornada de clase (Deshacer todas las acciones):', COLORS.violet);
+  console.log('%c\n3. Fin de la jornada de clase (Deshacer todas las acciones):', COLORS.green);
   panel.deshacerTodo();
+  panel.deshacer(); // Intento de deshacer cuando no hay historial
 
 }
 
